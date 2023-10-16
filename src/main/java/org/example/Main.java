@@ -54,22 +54,27 @@ public class Main {
 
                 public void actionPerformed(ActionEvent e) {
                     double num1, num2, result = 0.0;
-
+                    //Transformar em métodos
                     try {
                         num1 = Double.parseDouble(inputField1.getText());
                         num2 = Double.parseDouble(inputField2.getText());
 
                         if (label.equals("+")) {
-                            result = num1 + num2;
+                            Calculadora obj = new Calculadora();
+                            result = obj.soma(num1,num2);
                         } else if (label.equals("-")) {
-                            result = num1 - num2;
+                            Calculadora obj = new Calculadora();
+                            result = obj.subt(num1,num2);
                         }
                         else if (label.equals("X")) {
-                            result = num1 * num2;
+                            Calculadora obj = new Calculadora();
+                            result = obj.mult(num1,num2);
                         }
                         else if (label.equals("/")) {
+                            Calculadora obj = new Calculadora();
                             if (num2 != 0) {
-                                result = num1 / num2;
+                              result = obj.div(num1,num2);
+
                             } else {
                                 outputField.setText("Erro: Divisão por zero");
                                 return;
